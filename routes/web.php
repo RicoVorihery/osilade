@@ -16,7 +16,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/storeTest','HomeController@storeTest');
 
 
-Route::group(['middleware'=>['auth']], function(){
+Route::group(['middleware'=>['auth','web']], function(){
 	
 	//CRUD CLIENT
 	Route::resource('clients','ClientController');
@@ -61,4 +61,6 @@ Route::group(['middleware'=>['auth']], function(){
 
 });
 
-Auth::routes();
+Route::group(['middleware' => 'web'], function() {
+	Auth::routes();
+});
