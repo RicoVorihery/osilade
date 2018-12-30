@@ -93,9 +93,9 @@
                 <a href="{{('/services')}}">Services</a>
               </li>
 
-              <li class="{{Request::is('recherche*') ? 'active':''}}">
+             <!--  <li class="{{Request::is('recherche*') ? 'active':''}}">
                 <a href="{{('/recherche')}}">Recherche</a>
-              </li>
+              </li> -->
 
               <li class="dropdown {{Request::is('parametres*') ? 'active':''}}">
                 <a href="{{('/parametres')}}">Paramètres</a>
