@@ -12,7 +12,7 @@
         <div class="col-xs-12">
             <div class="box box-default">
                 <div class="box-header with-border">
-                  <h3 class="box-title"> Tableau de bord </h3>
+                  <h3 class="box-title"> Accueil</h3>
 
                 </div>
                 <!-- /.box-header -->
