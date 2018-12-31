@@ -106,7 +106,7 @@
           </div>
           <!-- FIN TOP NAV -->
           <!-- Right Side Of Navbar -->
-          <div class="navbar-custom-menu">
+          <!-- <div class="navbar-custom-menu"> -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
                 @if (Auth::guest())
@@ -134,7 +134,7 @@
                     </li>
                 @endif
             </ul>
-          </div>
+          <!-- </div> -->
           <!-- ./login nav bar -->
         </div>
         <!-- ./container-fluid -->
