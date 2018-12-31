@@ -35,7 +35,7 @@ Route::group(['middleware'=>['auth','web']], function(){
 	Route::get('references/deleteReferenceFile/{id}/{file}/{number}','ReferenceController@deleteReferenceFile');
 
 	//SETTINGS
-	Route::resource('parametres','SettingController',['except' => ['create', 'store']]);
+	Route::resource('parametres','SettingController',['except' => ['create', 'store','show']]);
 
 	//RESTRICTION
 	Route::get('settings/restriction', function(){
