@@ -21,19 +21,19 @@
                 <div class="box-body" style="font-size: 18px">
                     <div class="row">
                         <div class="col-md-3 menu-btn">
-                            <a href="{{url('parametres/type-materiels')}}"> 
+                            <a href="{{url('/parametres/type-materiels')}}"> 
                                 <button type="button" class="btn btn-block btn-primary btn-lg">Type Matériels</button> 
                             </a> 
                         </div>
                         <!-- <div class="clearfix"></div> -->
                         <div class="col-md-3 menu-btn">
-                            <a href="{{url('parametres/type-infos')}}">
+                            <a href="{{url('/parametres/type-infos')}}">
                                 <button type="button" class="btn btn-block btn-primary btn-lg">Type Informations</button> 
                             </a> 
                         </div>
                         <!-- <div class="clearfix"></div> -->
                         <div class="col-md-3 menu-btn">
-                            <a href="{{url('parametres/type-services')}}"> 
+                            <a href="{{url('/parametres/type-services')}}"> 
                                 <button type="button" class="btn btn-block btn-primary btn-lg">Type Services</button> 
                             </a> 
                         </div>

@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="{{asset('css/skins/skin-blue.min.css')}}">
 
   <!-- <link href="{{asset('css/app.css')}}" rel="stylesheet"> -->
-  <link href="{{asset('css/style.css')}}" rel="stylesheet">
+  <!-- <link href="{{asset('css/style.css')}}" rel="stylesheet"> -->
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -57,7 +57,7 @@
   <div class="wrapper">
 
     <header class="main-header">
-      <nav class="navbar navbar-static-top">
+      <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container container-header">
           <div class="navbar-header">
             <a href="{{url('/')}}" class="navbar-brand"> Osilade <b></b></a>
