@@ -74,23 +74,23 @@
               </li>
               
               <li class="{{Request::is('clients*') ? 'active':''}}">
-                <a href="{{('/clients')}}">Gestion Clients</a>
+                <a href="{{url('/clients')}}">Gestion Clients</a>
               </li>
 
               <li class="{{Request::is('references*') ? 'active':''}}">
-                <a href="{{('/references')}}">Références</a>
+                <a href="{{url('/references')}}">Références</a>
               </li>
 
               <li class="{{Request::is('parcs*') ? 'active':''}}">
-                <a href="{{('/parcs')}}">Parcs</a>
+                <a href="{{url('parcs')}}">Parcs</a>
               </li>
 
               <li class="{{Request::is('info-users*') ? 'active':''}}">
-                <a href="{{('/info-users')}}">Infos utilisateurs</a>
+                <a href="{{url('/info-users')}}">Infos utilisateurs</a>
               </li>
 
               <li class="{{Request::is('services*') ? 'active':''}}">
-                <a href="{{('/services')}}">Services</a>
+                <a href="{{url('/services')}}">Services</a>
               </li>
 
              <!--  <li class="{{Request::is('recherche*') ? 'active':''}}">
@@ -98,7 +98,7 @@
               </li> -->
 
               <li class="dropdown {{Request::is('parametres*') ? 'active':''}}">
-                <a href="{{('/parametres')}}">Paramètres</a>
+                <a href="{{url('/parametres')}}">Paramètres</a>
               </li>
               
             </ul>
