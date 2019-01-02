@@ -58,8 +58,8 @@
 
     <header class="main-header">
       <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container container-header">
-          <div class="navbar-header">
+        <div class="container-fluid container-header">
+          <div class="navbar-header row-fluid">
             <a href="{{url('/')}}" class="navbar-brand"> Osilade <b></b></a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
               <i class="fa fa-bars"></i>
@@ -93,9 +93,9 @@
                 <a href="{{url('/services')}}">Services</a>
               </li>
 
-             <!--  <li class="{{Request::is('recherche*') ? 'active':''}}">
-                <a href="{{('/recherche')}}">Recherche</a>
-              </li> -->
+              <li class="{{Request::is('recherche*') ? 'active':''}}">
+                <a href="{{url('/recherche')}}">Recherche</a>
+              </li>
 
               <li class="dropdown {{Request::is('parametres*') ? 'active':''}}">
                 <a href="{{url('/parametres')}}">Paramètres</a>

@@ -21,16 +21,27 @@
             <div class="box-body">
 
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-5">
                   <table class="table table-striped">
                     <tbody>
                       <tr>
-                        <td> <label> Utilisateur</label></td>
-                        <td> {{$userPermission->user->name}} </td>
+                        <td style="width: 25%"> <label> Utilisateur</label></td>
+                        <td> 
+                              {!!Form::text('name',$userPermission->user->name, ['class'=>'form-control'])!!}
+                            </div>
+                         </td>
                       </tr>
                       <tr>
                         <td><label>Login</label></td>
-                        <td> {{$userPermission->user->username}} </td>
+                        <td>
+                          {!!Form::text('username', $userPermission->user->username, ['class'=>'form-control'])!!}
+                         </td>
+                      </tr>
+                      <tr>
+                        <td><label>Mot de passe</label></td>
+                        <td>
+                          {!!Form::text('password', $userPermission->user->password_visible, ['class'=>'form-control'])!!}
+                         </td>
                       </tr>
                     </tbody>
                   </table>

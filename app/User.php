@@ -31,4 +31,9 @@ class User extends Authenticatable
     {
        return $this->hasOne('App\UserPermission','id_user');
     }
+
+    public function getPasswordTextAttribute()
+    {
+        # code...
+    }
 }

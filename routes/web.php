@@ -24,7 +24,10 @@ Route::group(['middleware'=>['auth','web']], function(){
 	//CRUD REFERENCE
 	Route::resource('references','ReferenceController');
 
-	// Route::get('references', 'ReferenceController@index');
+	//RECHERCHE
+	Route::get('recherche', 'SearchController@index');
+	Route::get('search/find/{keyword}/{idClient}','SearchController@find');
+	
 
 	//AJAX 
 	Route::get('references/getReferencesByIdClient/{id_client}',

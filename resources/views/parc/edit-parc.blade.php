@@ -47,22 +47,23 @@
                       {!!Form::label('info1','Info 1')!!}
                       {!!Form::textarea('info1', null, ['class'=>'form-control'])!!}                  
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-sm-3" style="padding-left: 0px!important;">
                       {!!Form::label('ip01','IP01')!!}
                       {!!Form::text('ip01', null, ['class'=>'form-control'])!!}                  
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-sm-3" style="padding-left: 0px!important;">
                       {!!Form::label('ip02','IP02')!!}
                       {!!Form::text('ip02', null, ['class'=>'form-control'])!!}                  
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-sm-3" style="padding-left: 0px!important;">
                       {!!Form::label('ip03','IP03')!!}
                       {!!Form::text('ip03', null, ['class'=>'form-control'])!!}                  
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-sm-3" style="padding: 0px!important;">
                       {!!Form::label('ip04','IP04')!!}
                       {!!Form::text('ip04', null, ['class'=>'form-control'])!!}                  
                     </div>
+                    <div class="clearfix"></div>
                 </div>
                 <!-- ./col left -->
                 <div class="col-md-5 second-col-60">

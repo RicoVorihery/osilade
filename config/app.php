@@ -172,6 +172,11 @@ return [
         Felixkiss\UniqueWithValidator\ServiceProvider::class,
         //Storage Flysystem
         GrahamCampbell\Flysystem\FlysystemServiceProvider::class,
+        //Scout search
+        Laravel\Scout\ScoutServiceProvider::class,
+        //Scout mysql driver
+        Yab\MySQLScout\Providers\MySQLScoutServiceProvider::class,
+
         /*
          * Package Service Providers...
          */

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 use App\UserPermission;
 use Illuminate\Support\Facades\Auth;
 
@@ -47,9 +48,28 @@ class SettingController extends BaseController
             return redirect('settings/restriction');
 
         $userPermission = UserPermission::find($id);
-        $data = $request->all();
+        $data = [
+            "modif_client"=>$request->modif_client,
+            "modif_reference"=>$request->modif_reference,
+            "modif_parc"=>$request->modif_parc,
+            "modif_user"=>$request->modif_user,
+            "modif_service"=>$request->modif_service,
+            "is_admin"=>$request->is_admin
+        ];
 
         $userPermission->fill($data)->save();
+
+        $user = User::find($userPermission->id_user);
+        $user->name = $request->name;
+        $user->username = $request->username;
+        
+        if($user->password_visible!=$request->password)
+        {
+            $user->password_visible = $request->password;
+            $user->password = Hash::make($request->password);
+        }
+
+        $user->save();
 
         flash('Permission utilisateur "'.$userPermission->user->name.'" mis à jour avec succès!')->success();
         return redirect('parametres');

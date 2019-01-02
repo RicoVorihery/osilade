@@ -121,6 +121,7 @@ return [
     |
     */
 
+    //Note Need change after upgrade to laravel 5.4
     'redis' => [
 
         'cluster' => false,

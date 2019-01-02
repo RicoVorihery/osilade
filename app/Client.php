@@ -8,7 +8,7 @@ class Client extends Model
 {
 	protected $guarded=[''];
 
-
+	
 	public function references()
     {
         return $this->hasMany('App\Reference','id_client');
