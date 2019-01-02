@@ -82,7 +82,7 @@
               </li>
 
               <li class="{{Request::is('parcs*') ? 'active':''}}">
-                <a href="{{url('parcs')}}">Parcs</a>
+                <a href="{{url('/parcs')}}">Parcs</a>
               </li>
 
               <li class="{{Request::is('info-users*') ? 'active':''}}">
