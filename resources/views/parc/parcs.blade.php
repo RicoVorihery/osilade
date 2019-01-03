@@ -63,7 +63,7 @@
       var id_client = $(this).val();
       $.ajax({
         method : 'GET',
-        url : '/parcs/getParcsByIdClient/{id_client}',
+        url : base_url+'/parcs/getParcsByIdClient/{id_client}',
         data : {id_client :id_client}
       })
       .done(function(data){

@@ -76,7 +76,7 @@
       var id_client = $(this).val();
       $.ajax({
         method : 'GET',
-        url : '/services/getServicesByIdClient/{id_client}',
+        url : base_url+'/services/getServicesByIdClient/{id_client}',
         data : {id_client :id_client}
       })
       .done(function(data){

@@ -99,7 +99,7 @@
 
         $.ajax({
           method:'GET',
-          url:'/search/find/{keyword}/{idClient}',
+          url:base_url+'/search/find/{keyword}/{idClient}',
           data : {keyword:keyword,idClient:idClient}
         })
         .done(function(data){

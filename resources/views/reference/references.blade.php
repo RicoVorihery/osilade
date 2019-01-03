@@ -70,7 +70,7 @@
 
   $(function(){
     
-    console.log("base url:"+ base_url);
+    // console.log("base url:"+ base_url);
 
     //A la selection de la ref_client
     $(document).on("select2:select",".client-select", function(e){
