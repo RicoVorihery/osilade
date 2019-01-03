@@ -56,7 +56,8 @@
 <body class="hold-transition skin-blue layout-top-nav">
   <div class="wrapper">
     <header class="main-header">
-      <nav class="navbar navbar-default navbar-fixed-top">
+      <!-- <nav class="navbar navbar-default navbar-fixed-top "> -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid container-header">
           <div class="navbar-header row-fluid">
             <a href="{{url('/')}}" class="navbar-brand"> Osilade <b></b></a>
