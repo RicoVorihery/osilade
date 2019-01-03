@@ -63,10 +63,15 @@
 <script src="{{asset('js/osilade/upload-file.js')}}"></script>
 
 <script type="text/javascript">
-    //Datatables
-      setDataTable("#references_table","fr");
+  //Datatables
+  setDataTable("#references_table","fr");
+
+  
 
   $(function(){
+    
+    console.log("base url:"+ base_url);
+
     //A la selection de la ref_client
     $(document).on("select2:select",".client-select", function(e){
       
@@ -75,7 +80,7 @@
       var id_client = $(this).val();
       $.ajax({
         method : 'GET',
-        url : '/references/getReferencesByIdClient/{id_client}',
+        url : base_url+'/references/getReferencesByIdClient/{id_client}',
         data : {id_client :id_client}
       })
       .done(function(data){

@@ -55,7 +55,6 @@
 </head>
 <body class="hold-transition skin-blue layout-top-nav">
   <div class="wrapper">
-
     <header class="main-header">
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid container-header">
@@ -145,6 +144,8 @@
     <div class="content-wrapper">
       <div class="tonda-container">
       <span id="current_path" style="display: none;">{{ Request::path() }}</span>
+      <span style="display: none;" id="base_url">{{url('/')}}</span>
+
       @yield('content')
 
       <div class="inner-content-wrapper"></div>
@@ -207,6 +208,10 @@
   moment.updateLocale('fr', {
       week: { dow: 1 } // Monday is the first day of the week
     });
+
+    //url de base
+    var base_url = $("#base_url").text();
+
   
   //Select 2 js pour tous les select box
     var selectBox = $("select").not("dataTables_length.select");
