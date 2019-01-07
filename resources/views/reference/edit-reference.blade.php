@@ -143,7 +143,7 @@
       var number = $(this).parent("p").attr('id');
       $.ajax({
         method : 'GET',
-      url : '/references/deleteReferenceFile/{id}/{file}/{number}',
+      url : base_url+'/references/deleteReferenceFile/{id}/{file}/{number}',
         data : {id :id,file:file,number:number}
       })
       .done(function(data){
