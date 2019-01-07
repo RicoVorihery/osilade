@@ -30,13 +30,29 @@ class SettingController extends BaseController
         if(!$this->currentUser->UserPermission->is_admin)
             return redirect('settings/restriction');
 
-        return view('settings.create-setting');
+        $users = User::all();
+
+        return view('settings.create-setting')->with('users',$users);
     }
 
     public function store(Request $request)
     {
         if(!$this->currentUser->UserPermission->is_admin)
             return redirect('settings/restriction');
+        
+        $users = User::all();
+        if($users->count()==8)
+        {
+            flash('Désolé, Vous avez atteint le nombre maximal d\'utilisateurs.')->warning();
+            return redirect('parametres');
+        }
+    
+        $this->validate($request,[
+            'name' => 'required|max:255',
+            'username' => 'required|max:255|unique:users',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6|confirmed',
+            ]);
 
         $user = new User;
         $user->name = $request->name;
@@ -57,7 +73,7 @@ class SettingController extends BaseController
             "is_admin"=>$request->is_admin
         ];
         $userPermission = new UserPermission;
-        
+
         $userPermission->fill($data)->save();
 
         flash('Utilisateur "'.$user->name.'" créé avec succès!')->success();

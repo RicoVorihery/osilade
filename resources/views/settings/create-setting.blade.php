@@ -19,8 +19,11 @@
                 <h3 class="box-title"> Ajout nouveau utilisateur </h3>
             </div>
             <div class="box-body">
-
+              @if($users->count()==8)
+                    <p> Désolé, Vous avez atteint le nombre maximal d'utilisateurs. </p>
+                @else
               <div class="row">
+                
                 <div class="col-md-4">
                  <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                       {!!Form::label('name','Nom')!!}
@@ -113,6 +116,8 @@
 	          {!!Form::submit('Valider',['class'=>'btn btn-primary'])!!}
 	        </div>
 	        <!-- /. box-footer -->
+          @endif
+
           {!! Form::close() !!}
 
         </div>
