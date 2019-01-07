@@ -69,11 +69,11 @@ class ReferenceController extends BaseController
             'id_client'=>'required',
             'titre'=>'required|unique_with:references,id_client',
             'reference'=>'required',
-            'file01' => 'mimes:pdf,docx,xlsx,doc,xls,txt|max:5120',
-            'file02' => 'mimes:pdf,docx,xlsx,doc,xls,txt|max:5120',
-            'file03' => 'mimes:pdf,docx,xlsx,doc,xls,txt|max:5120',
-            'file04' => 'mimes:pdf,docx,xlsx,doc,xls,txt|max:5120',
-        ]);
+            'file01' => 'mimes:pdf,docx,xlsx,doc,xls,txt,zip|max:5120',
+            'file02' => 'mimes:pdf,docx,xlsx,doc,xls,txt,zip|max:5120',
+            'file03' => 'mimes:pdf,docx,xlsx,doc,xls,txt,zip|max:5120',
+            'file04' => 'mimes:pdf,docx,xlsx,doc,xls,txt,zip|max:5120',
+        ]); 
 
         // $client = Client::find($request->id_client);
 
@@ -166,10 +166,10 @@ class ReferenceController extends BaseController
             'id_client'=>'required',
             'titre'=>'required|unique_with:references,id_client,'.$id,
             'reference'=>'required',
-            'file01' => 'mimes:pdf,docx,xlsx,doc,xls,txt|max:5120',
-            'file02' => 'mimes:pdf,docx,xlsx,doc,xls,txt|max:5120',
-            'file03' => 'mimes:pdf,docx,xlsx,doc,xls,txt|max:5120',
-            'file04' => 'mimes:pdf,docx,xlsx,doc,xls,txt|max:5120',
+            'file01' => 'mimes:pdf,docx,xlsx,doc,xls,txt,zip|max:5120',
+            'file02' => 'mimes:pdf,docx,xlsx,doc,xls,txt,zip|max:5120',
+            'file03' => 'mimes:pdf,docx,xlsx,doc,xls,txt,zip|max:5120',
+            'file04' => 'mimes:pdf,docx,xlsx,doc,xls,txt,zip|max:5120',
         ]);
 
         
@@ -259,6 +259,21 @@ class ReferenceController extends BaseController
         return view('reference.partial.reference-dtl')->with('reference',$reference);
     }
 
+    public function downloadFile()
+    {
+        $file = $_GET['fileName'];
+        $refClient = $_GET['refClient'];
+
+        $file_path = Config::get('files.file_dir');
+        $full_path = $file_path.$refClient.'/';
+        
+        if(file_exists($full_path.$file))
+            return response()->download($full_path.$file,$file);
+        else
+        {
+            exit("Désolé, ce fichier n'existe pas!");
+        }
+    }
 
     public function deleteReferenceFile()
     {
@@ -274,8 +289,7 @@ class ReferenceController extends BaseController
 
         $resp = $fileLibrary->deleteFile($reference,$number);
 
-        if($resp)
-            $reference->save();
+        $reference->save();
 
         return response()->json($resp);
     }

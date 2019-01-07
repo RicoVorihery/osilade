@@ -52,8 +52,9 @@ class FileLibrary
                 break;
         }
 
-        if(file_exists($full_path.$file))
+        if(file_exists($full_path.$file)){
             return File::delete($full_path.$file);        
+        }
         else
             return false;
     }

@@ -148,12 +148,12 @@
       })
       .done(function(data){
         console.log(data);
-        if(data == true){
+        // if(data == true){
           $(lnk).closest("div.file_container").html('<div class="form-group">'+
                           '<label for="file'+number+'">Ajouter Fichier</label>'+
                           '<input name="file'+number+'" type="file" id="file'+number+'">'+
                           '</div>');
-        }
+        // }
 
         // $('div.reference_dtl_container').html(data);
       }); //ajax done

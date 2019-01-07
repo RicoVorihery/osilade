@@ -28,6 +28,18 @@
                 </div>
                 <div class="clearfix"></div>
 
+                @if ($errors->any())
+                  <div class="alert alert-danger">
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+              @endif
+              <div class="clearfix">
+  
+</div>
                 <div class="client_container col-md-4">
                     <div class="form-group client_div {{ $errors->has('id_client') ? 'has-error':'' }}">
                       {!!Form::label('id_client','Réf. client',['class'=>'ref_client'])!!}

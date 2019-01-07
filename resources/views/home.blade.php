@@ -1,8 +1,11 @@
+<!-- DEBUT - NE PAS TOUCHER CETTE SECTION -->
 @extends('layouts.app-master')
 @section('content')
+<!-- FIN - NE PAS TOUCHER CETTE SECTION -->
+
+
 <section class="content-header">
   <h1>
-    
     <small></small>
   </h1>
 </section>
@@ -31,4 +34,8 @@
     </div>
     <!-- /.row -->
 </section>
+
+
+<!-- DEBUT - NE PAS TOUCHER CETTE SECTION -->
 @endsection
+<!-- FIN - NE PAS TOUCHER CETTE SECTION -->

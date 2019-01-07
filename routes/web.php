@@ -37,6 +37,8 @@ Route::group(['middleware'=>['auth','web']], function(){
 
 	Route::get('references/deleteReferenceFile/{id}/{file}/{number}','ReferenceController@deleteReferenceFile');
 
+	Route::get('references/file/download','ReferenceController@downloadFile');
+
 	//SETTINGS
 	Route::resource('parametres','SettingController',['except' => ['create', 'store','show']]);
 
