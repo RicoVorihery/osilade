@@ -25,6 +25,45 @@ class SettingController extends BaseController
     		return view('settings.settings')->with($data);
     }
 
+    public function create()
+    {
+        if(!$this->currentUser->UserPermission->is_admin)
+            return redirect('settings/restriction');
+
+        return view('settings.create-setting');
+    }
+
+    public function store(Request $request)
+    {
+        if(!$this->currentUser->UserPermission->is_admin)
+            return redirect('settings/restriction');
+
+        $user = new User;
+        $user->name = $request->name;
+        $user->username = $request->username;
+        $user->email = $request->email;
+        $user->password_visible = $request->password;
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        //Créer user permission
+        $data = [
+            "id_user"=>$user->id,
+            "modif_client"=>$request->modif_client,
+            "modif_reference"=>$request->modif_reference,
+            "modif_parc"=>$request->modif_parc,
+            "modif_user"=>$request->modif_user,
+            "modif_service"=>$request->modif_service,
+            "is_admin"=>$request->is_admin
+        ];
+        $userPermission = new UserPermission;
+        
+        $userPermission->fill($data)->save();
+
+        flash('Utilisateur "'.$user->name.'" créé avec succès!')->success();
+        return redirect('parametres');
+    }
+
     public function edit($id)
     {
         if(!$this->currentUser->UserPermission->is_admin)

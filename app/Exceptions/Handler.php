@@ -5,6 +5,7 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -47,6 +48,10 @@ class Handler extends ExceptionHandler
         if( $exception instanceof TokenMismatchException){
             return response()
                 ->view('errors.401', ['error' => 'Page expired, go back and try again'], 401);
+        }
+
+         if ($exception instanceof MethodNotAllowedHttpException) {
+            return abort(404);
         }
 
         return parent::render($request, $exception);

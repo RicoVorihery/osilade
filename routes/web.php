@@ -40,7 +40,7 @@ Route::group(['middleware'=>['auth','web']], function(){
 	Route::get('references/file/download','ReferenceController@downloadFile');
 
 	//SETTINGS
-	Route::resource('parametres','SettingController',['except' => ['create', 'store','show']]);
+	Route::resource('parametres','SettingController',['except' => ['show']]);
 
 	//RESTRICTION
 	Route::get('settings/restriction', function(){
@@ -50,7 +50,7 @@ Route::group(['middleware'=>['auth','web']], function(){
 	//CRUD TYPES
 	Route::resource('parametres/type-materiels','TypeMaterielController');
 	Route::resource('parametres/type-infos','TypeInfoController');
-	Route::resource('parametres/type-services','TypeServiceController');
+	// Route::resource('parametres/type-services','TypeServiceController');
 
 	//CRUD PARC
 	Route::resource('parcs','ParcController');

@@ -32,11 +32,11 @@
                             </a> 
                         </div>
                         <!-- <div class="clearfix"></div> -->
-                        <div class="col-md-3 menu-btn">
+                        <!-- <div class="col-md-3 menu-btn">
                             <a href="{{url('/parametres/type-services')}}"> 
                                 <button type="button" class="btn btn-block btn-primary btn-lg">Type Services</button> 
                             </a> 
-                        </div>
+                        </div> -->
 
                         
                     </div> 
@@ -58,6 +58,11 @@
                 
                 <div class="box-body">
                   @include('flash::message')
+                  <p>
+                    <a href="{{url('parametres/create')}}">
+                      <button class="btn btn-primary"> Ajouter </button>
+                    </a>
+                  </p>
                   
                     <table id="settings_table" class="table table-hover table-striped">
                         <thead>
