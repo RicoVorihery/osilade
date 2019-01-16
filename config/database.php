@@ -53,34 +53,34 @@ return [
         ],
 
         //Production
-        'mysql' => [
-            'driver' => 'mysql',
-            'host' => env('DB_HOST', 'https://192.162.69.234:8080'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'osilade'),
-            'username' => env('DB_USERNAME', 'adminDB'),
-            'password' => env('DB_PASSWORD', 'Caramel-56'),
-            'charset' => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix' => '',
-            'strict' => true,
-            'engine' => null,
-        ],
-
-        //Local
         // 'mysql' => [
         //     'driver' => 'mysql',
-        //     'host' => env('DB_HOST', '127.0.0.1'),
+        //     'host' => env('DB_HOST', 'https://192.162.69.234:8080'),
         //     'port' => env('DB_PORT', '3306'),
         //     'database' => env('DB_DATABASE', 'osilade'),
-        //     'username' => env('DB_USERNAME', 'rico'),
-        //     'password' => env('DB_PASSWORD', 'v0r1h3r1+++'),
+        //     'username' => env('DB_USERNAME', 'adminDB'),
+        //     'password' => env('DB_PASSWORD', 'Caramel-56'),
         //     'charset' => 'utf8',
         //     'collation' => 'utf8_unicode_ci',
         //     'prefix' => '',
         //     'strict' => true,
         //     'engine' => null,
         // ],
+
+        //Local
+        'mysql' => [
+            'driver' => 'mysql',
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('DB_DATABASE', 'osilade'),
+            'username' => env('DB_USERNAME', 'rico'),
+            'password' => env('DB_PASSWORD', 'v0r1h3r1+++'),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+        ],
 
         'pgsql' => [
             'driver' => 'pgsql',

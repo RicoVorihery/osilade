@@ -61,7 +61,7 @@ class ServiceController extends BaseController
             return redirect('settings/restriction');
 
         $this->validate($request,[
-            'titre' =>'required|unique:services',
+            'titre' =>'required|unique_with:services,id_client',
             ]);
 
         $service = new Service;
@@ -136,7 +136,7 @@ class ServiceController extends BaseController
             return redirect('settings/restriction');
 
         $this->validate($request,[
-            'titre' =>'required|unique_with:services,'.$id,
+            'titre' =>'required|unique_with:services,id_client,'.$id,
             ]);
 
         $service = Service::find($id);
