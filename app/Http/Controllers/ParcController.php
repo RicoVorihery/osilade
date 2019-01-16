@@ -62,9 +62,9 @@ class ParcController extends BaseController
         if(!$this->currentUser->UserPermission->modif_parc)
             return redirect('settings/restriction');
 
-         $this->validate($request,[
-            'ref_inventaire' =>'required|unique:parcs',
-            ]);
+         // $this->validate($request,[
+         //    'ref_inventaire' =>'required|unique:parcs',
+         //    ]);
 
         $parc = new Parc;
 
@@ -136,9 +136,9 @@ class ParcController extends BaseController
         if(!$this->currentUser->UserPermission->modif_parc)
             return redirect('settings/restriction');
 
-        $this->validate($request,[
-            'ref_inventaire' =>'required|unique_with:parcs,'.$id,
-            ]);
+        // $this->validate($request,[
+        //     'ref_inventaire' =>'required|unique_with:parcs,'.$id,
+        //     ]);
 
         $parc = Parc::find($id);
 

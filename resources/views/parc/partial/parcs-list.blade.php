@@ -4,14 +4,14 @@
 <table id="parcs_table" class="table table-hover table-striped table-bordered">
 	<thead>
     <tr>
-      <th style="width:15%">Réf. Inventaire</th>
+      <th style="width:13%">Réf. Inventaire</th>
       <th style="width: 13%"> Type Matériel </th>
       <th style="width: 10%"> IP01 </th>
       <th style="width: 10%"> IP02 </th>
       <th style="width: 12%"> Nom </th>
       <th style="width: 10%"> login </th>
       <th style="width: 10%"> ID TV </th>
-      <th style="width: 15%"> Action </th>
+      <th style="width: 20%"> Action </th>
     </tr>
   </thead>
   <tbody>
@@ -31,6 +31,10 @@
         <td> {{$parc->login}} </td>
         <td> {{$parc->id_tv}} </td>
     		<td>
+          <a href="{{url('parcs/'.$parc->id)}}">
+                  <i class="fa fa-th-list" aria-hidden="true"></i> Afficher
+                </a>
+                &nbsp;
     			<a href="{{url('parcs/'.$parc->id.'/edit')}}">
 	                <i class="fa fa-pencil" aria-hidden="true"></i> Editer
 	              </a>

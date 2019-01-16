@@ -29,11 +29,9 @@
                       {!! $errors->first('id_client','<small class="help-block">:message</small>')!!}
                     </div>
 
-                    <div class="form-group {{ $errors->has('ref_inventaire') ? 'has-error':'' }}">
+                    <div class="form-group">
                       {!!Form::label('ref_inventaire','Réf. Inventaire')!!}
                       {!!Form::text('ref_inventaire', null, ['class'=>'form-control', 'placeholder'=>'Entrer la réf. inventaire'])!!}
-
-                      {!! $errors->first('ref_inventaire','<small class="help-block">:message</small>')!!}
                     </div>
 
                     <div class="form-group {{ $errors->has('id_type_materiel') ? 'has-error':'' }}">
